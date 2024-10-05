@@ -4,6 +4,9 @@
 # Files
 message.txt
 
+# Debug config
+.vscode
+
 ### Node ###
 # Logs
 logs
