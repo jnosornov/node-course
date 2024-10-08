@@ -1,5 +1,15 @@
 const http = require('http');
-const routes = require('./routes')
+const express = require('express');
 
-const server = http.createServer(routes);
-server.listen(3000);
+const app = express();
+app.use((req, res, next) => {
+  console.log("In the middlewear!");
+  next(); // allows the request to continue to next middlewear in line
+});
+
+app.use((req, res, next) => {
+  console.log("In another middlewear!");
+  res.send('<h1>Hello from Express!</h1>');
+});
+
+app.listen(3000);
